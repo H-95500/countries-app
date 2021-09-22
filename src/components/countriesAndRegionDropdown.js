@@ -55,6 +55,8 @@ class CountriesAndRegionDropdown extends React.Component {
     )
   }
 }
+
+
 const mapStateToProps = (state) => {
   return {
     result: state.event.result,
