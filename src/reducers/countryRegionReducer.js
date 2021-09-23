@@ -15,7 +15,7 @@ const countryRegionReducer = (state = INITIAL_STATE, { type, payload }) => {
     case event_Types.SET_DROPDOWN_VALUES_ERROR:
       return {
         ...state,
-        error: payload.error,
+        error: payload,
       }
     default:
       return state;

@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from 'react-redux';
-import getCountryList from '../actions/actions-get-dropdownList';
+import getCountryList from '../actions/actionGet';
 import CommonDropDown from './common/commonDropDown';
-class CountriesAndRegionDropdown extends React.Component {
+class CountriesDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,17 +10,11 @@ class CountriesAndRegionDropdown extends React.Component {
       countries: [],
       selectCountry: '',
     };
-
-    console.log('constructor')
   }
   componentDidMount() {
     this.setCountries(this.props.Content.regionDropDown[0].name);
-    console.log('componentDidMount')
   }
-
-
   static getDerivedStateFromProps(nextProps, prevProps) {
-    console.log('getDerivedStateFromProps')
     if (prevProps.result !== nextProps.result) {
       return {
         countries: nextProps.result,
@@ -29,7 +23,6 @@ class CountriesAndRegionDropdown extends React.Component {
     }
     return null;
   }
-  
   setCountries(name) {
     this.props.getCountryList(name);
     if (this.props.result) {
@@ -43,7 +36,6 @@ class CountriesAndRegionDropdown extends React.Component {
     return (
       <div className="row">
         <div className="col-20" style={{ textAlign: "center" }}>
-          {console.log('render')}
           <CommonDropDown id="regionDropDown" label={this.props.Content.regionDropdownLabel}
            handleOnChange={(name)=>this.setCountries(name)} 
            dropdownList={this.props.Content.regionDropDown} />
@@ -55,8 +47,6 @@ class CountriesAndRegionDropdown extends React.Component {
     )
   }
 }
-
-
 const mapStateToProps = (state) => {
   return {
     result: state.event.result,
@@ -66,4 +56,5 @@ const mapStateToProps = (state) => {
 const mapsDispatchToProps = (dispatch) => ({
   getCountryList: (name) => dispatch(getCountryList(name))
 });
-export default connect(mapStateToProps, mapsDispatchToProps)(CountriesAndRegionDropdown);
+export default connect(mapStateToProps, mapsDispatchToProps)(CountriesDropdown);
+// export default CountriesDropdown;

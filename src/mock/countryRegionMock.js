@@ -18,7 +18,7 @@ const MockContent = {
             name:"Europe"
         }
     ],
-    regionDropdownLabel: "Select Region",
-    countryDropdownLabel: "Select Country"
+    regionDropdownLabel: "Region",
+    countryDropdownLabel: "Country"
 }
 export default MockContent;

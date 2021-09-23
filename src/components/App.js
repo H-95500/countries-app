@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from '../styles/App.css'
-import CountriesAndRegionDropdown from './countriesAndRegionDropdown';
+import CountriesDropdown from './getCountries';
 import MockContent from '../mock/countryRegionMock';
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
         <h1 style={{ textAlign: "center" }}>{this.props.Content.heading}</h1>
         <div className="row">
           <form className="row g-3">
-            <CountriesAndRegionDropdown Content={this.props.Content}/>
+            <CountriesDropdown Content={this.props.Content}/>
           </form>
         </div>
         </div>

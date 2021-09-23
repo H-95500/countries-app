@@ -14,6 +14,7 @@ class CommonDropDown extends Component {
                 <label>{this.props.label}</label>
                 <select
                     id={this.props.id}
+                    
                     onChange={(e) => this.handleDropdownChange(e)} style={{ textAlign: "center", color: "green", width: "300px" }}>
                     {
                         dropdownList.map(x => {
