@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from 'react-redux';
 import getCountryList from '../actions/actionGet';
 import CommonDropDown from './common/commonDropDown';
+
 class CountriesDropdown extends React.Component {
   constructor(props) {
     super(props);
@@ -12,7 +13,7 @@ class CountriesDropdown extends React.Component {
     };
   }
   componentDidMount() {
-    this.setCountries(this.props.Content.regionDropDown[0].name);
+    this.setCountries(this.props.Content.regionDropDown[0].ability.name);
   }
   static getDerivedStateFromProps(nextProps, prevProps) {
     if (prevProps.result !== nextProps.result) {
@@ -37,24 +38,18 @@ class CountriesDropdown extends React.Component {
       <div className="row">
         <div className="col-20" style={{ textAlign: "center" }}>
           <CommonDropDown id="regionDropDown" label={this.props.Content.regionDropdownLabel}
-           handleOnChange={(name)=>this.setCountries(name)} 
-           dropdownList={this.props.Content.regionDropDown} />
+            handleOnChange={(name) => this.setCountries(name)}
+            dropdownList={this.props.Content.regionDropDown} />
           <br />
           <CommonDropDown label={this.props.Content.countryDropdownLabel} id="countryDropDown" dropdownList={this.props.result} />
         </div>
+        <br />
+        <br />
+        {this.props.error && <p style={{ textAlign: 'center', color: 'red', fontSize: '20px' }}>Something went wrong. </p>}
       </div >
 
     )
   }
 }
-const mapStateToProps = (state) => {
-  return {
-    result: state.event.result,
-    error: state.event.error,
-  };
-};
-const mapsDispatchToProps = (dispatch) => ({
-  getCountryList: (name) => dispatch(getCountryList(name))
-});
-export default connect(mapStateToProps, mapsDispatchToProps)(CountriesDropdown);
-// export default CountriesDropdown;
+
+export default CountriesDropdown;

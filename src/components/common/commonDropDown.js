@@ -18,7 +18,7 @@ class CommonDropDown extends Component {
                     onChange={(e) => this.handleDropdownChange(e)} style={{ textAlign: "center", color: "green", width: "300px" }}>
                     {
                         dropdownList.map(x => {
-                            return <option>{x.name}</option>
+                            return <option>{x.ability.name}</option>
                         })
                     }
                 </select>

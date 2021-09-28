@@ -80,5 +80,134 @@ margin-top: 3.3rem;
  */
 
 
+ body {
+  background-color:whitesmoke;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  padding-top: 20px;
+  height: 100%;
+}
 
- 
+
+
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  justify-content: space-evenly;
+  align-content: space-around;
+  height: 8rem;
+  width: 25rem;
+  background-color: rgb(248, 245, 245);
+  margin-left: 35rem;
+ margin-top: 2rem;
+ box-shadow: 0 0 20px 8px #d0d0d0;
+ border-radius: 30px;
+ font-size: 1.3rem;
+}
+
+h1 {
+  text-align: center;
+  color: #1548d4;
+  font-weight: bold;
+  padding-right: 17px;
+  padding-top: 20px;
+  font-size: 2rem;
+}
+
+h5{
+
+  color: rgb(228, 132, 22);
+  padding-bottom: 1rem;
+  margin-left: 26rem;
+  padding-top: 1.5rem;
+
+}
+
+h4 {
+  color: rgb(228, 132, 22);
+  padding-bottom: 1rem;
+  margin-left: 26rem;
+}
+
+
+Button {
+  align-items: center;
+  min-height: 50px;
+  width: 80px;
+  border-radius: 8%;
+  border-color: transparent;
+  background-color: #0c4fa7;
+  color: #ffff;
+  font-size: 17px;
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.item {
+
+  width: 600px;
+  padding-left: 0px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  min-height: 40px;
+  display: flex;
+  color: #2e2b31;
+  text-transform: capitalize;
+  border-bottom: 2px solid grey;
+  border-top: 2px solid grey;
+  border-left: 2px solid grey;
+  border-right: 2px solid grey;
+  border-radius: 8px;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 23rem;
+}
+
+.editdel{
+  float: left;
+  text-align: right;
+  padding-right: 5px;
+  nav-right: auto; 
+}
+
+.actions{
+text-align: right;
+align-items: right;
+
+}
+
+ol, ul {
+  padding-left: 2rem;
+  padding-top: 1rem;
+}
+
+.editfield{
+  width:40%;
+  margin-left: 4rem;
+}
+
+
+.modaledit{
+  width: 40%;
+  float:left;
+}
+
+.textField{
+  margin-left: 26rem;
+}
+
+.addItem{
+  height: 3rem;
+  width:40%;
+}

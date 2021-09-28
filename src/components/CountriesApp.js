@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import styles from '../styles/App.css'
-import CountriesDropdown from './getCountries';
+import AppContainer from '../containers/AppContainer';
 import MockContent from '../mock/countryRegionMock';
 
-class App extends Component {
+
+class CountriesApp extends Component {
   render() {
     return (
       <div className={styles.App}>
         <div className="widget">
-        <h1 style={{ textAlign: "center" }}>{this.props.Content.heading}</h1>
+        <h2 style={{ textAlign: "center" }}>{this.props.Content.heading}</h2>
         <div className="row">
           <form className="row g-3">
-            <CountriesDropdown Content={this.props.Content}/>
+            <AppContainer Content={this.props.Content}/>
           </form>
         </div>
         </div>
@@ -19,6 +20,6 @@ class App extends Component {
     );
   }
 }
-App.defaultProps = { Content: MockContent }
+CountriesApp.defaultProps = { Content: MockContent }
 
-export default App;
+export default CountriesApp;
